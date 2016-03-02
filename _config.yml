@@ -9,10 +9,10 @@
 title: isan's Tech Blog
 email: 3isan333@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  即将开启一个间隔月
+  正在享受间隔月
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://yourdomain.com" # the base hostname & protocol for your site
-twitter_username: isan
+twitter_username: 3isan
 github_username:  beset
 
 # Build settings
