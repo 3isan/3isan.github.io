@@ -1,10 +1,10 @@
 # Site settings
-title: isan's Blog
-SEOTitle: isan的博客 | isan's Blog
+title: Isan's Blog
+SEOTitle: Isan的博客 | Isan's Blog
 header-img: img/home-bg.jpg
 email: 3isan333@gmail.com
-description: "Fortress of Solitude of isan"
-keyword: "胡阳华, isan, isan HU, @isan"
+description: "Fortress of Solitude of Isan"
+keyword: "胡阳华, Isan, Isan HU, @isan"
 url: "http://www.isan.io/"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
