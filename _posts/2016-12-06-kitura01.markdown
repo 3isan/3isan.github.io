@@ -56,6 +56,7 @@ $ swift package init --type executable
 ```
 
 swift project 创建成功后，项目目录结构应该是：
+
 ```
 Kitura-test
 ├── Package.swift
@@ -65,6 +66,7 @@ Kitura-test
 ```
 
 在 `Package.swift` 中加上 `Kitura` 依赖
+
 ```swift
 import PackageDescription
 let package = Package(
@@ -75,6 +77,7 @@ let package = Package(
 ```
 
 在 `Sources/main.swift` 中加上：
+
 ```swift
 import Kitura
 // Create a new router
@@ -92,12 +95,14 @@ Kitura.run()
 ```
 
 编译
+
 ```
 $ swift build
 ```
 编译开始首先回去 clone `Package.swift` 中的依赖，完成之后编译项目和依赖的模块，最后链接模块、项目。这些过程终端中有比较简略的输出可供查看。
 
 运行程序
+
 ```
 $ .build/debug/Kitura-test
 ```
@@ -109,7 +114,9 @@ $ .build/debug/Kitura-test
 #### 给应用加上 log
 
 运行这个程序后终端中没有任何的输出信息，所以就无从知道程序的运行状态。可以添加一个 log 模块帮助查看及诊断程序：
+
 在 `Package.swift` 中添加 `HeliumLogger` 依赖：
+
 ```swift
 import PackageDescription
 let package = Package(
@@ -121,6 +128,7 @@ let package = Package(
 ```
 
 在 `Sources/main.swift` 中开启 `HeliumLogger`
+
 ```swift
 import Kitura
 import HeliumLogger
@@ -141,6 +149,7 @@ Kitura.run()
 ```
 
 按 `Ctrl + C` 终止程序运行后重新 `build` 项目并重新运行项目，运行后可以在终端中看到如下的 log 信息：
+
 ```
 VERBOSE: init(mergeParameters:) Router.swift line 67 - Router initialized 
  VERBOSE: run() Kitura.swift line 71 - Starting Kitura framework... 
