@@ -43,11 +43,13 @@ IBM 和苹果显然已经借着 Swift 成了一对基友。
 #### 创建一个 Kitura web 应用
 
 创建项目目录
+
 ```
 $ mkdir Kitura-test
 ```
 
 使用 [Swift Package Manager](https://swift.org/package-manager/) 创建一个swift project
+
 ```
 $ cd Kitura-test
 $ swift package init --type executable
