@@ -2,10 +2,9 @@
 layout:     post
 title:      "iMessage App 在国行手机上无法联网的问题"
 subtitle:   ""
-date:       2016-12-08 22:00
+date:       2016-12-07 22:40
 author:     "isan"
 header-img: "img/great-fire-wall-bg.jpg"
-catalog: true
 tags:
 	- iOS
     - iMessage App

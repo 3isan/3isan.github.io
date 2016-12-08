@@ -28,6 +28,9 @@ Swift 社区实在是太过活跃，自从 Swift 于2015年12月份正式开源�
 
 今天我选择从 `Kitura` 入坑，至于为什么选择 `Kitura` ?你可以从今年六月份WWDC的[这一个 session](https://developer.apple.com/videos/play/wwdc2016/415/)
 ![img](/img/in-post/swift-server/bestie.png)
+
+以及 IBM 的 [Chris Bailey](https://twitter.com/Chris__Bailey/) 在今年10月25号于 Swift 官方博客上[宣布 Server APIs work group 的成立](https://swift.org/server-apis/)。
+
 以及 Chris Lattner 的[这篇推文](https://twitter.com/clattner_llvm/status/804726031546335232)
 找到答案。
 ![img](/img/in-post/swift-server/chris-ibm.png)
@@ -99,7 +102,7 @@ Kitura.run()
 ```
 $ swift build
 ```
-编译开始首先回去 clone `Package.swift` 中的依赖，完成之后编译项目和依赖的模块，最后链接模块、项目。这些过程终端中有比较简略的输出可供查看。
+编译开始首先回去 clone `Package.swift` 中的依赖，完成之后编译项目和依赖的模块，最后链接模块。这些过程终端中有比较简略的输出可供查看。
 
 运行程序
 

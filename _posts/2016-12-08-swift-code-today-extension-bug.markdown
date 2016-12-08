@@ -5,7 +5,6 @@ subtitle:   ""
 date:       2016-12-08 22:00
 author:     "isan"
 header-img: "img/bug-bg.jpg"
-catalog: true
 tags:
 	- iOS
     - Swift
