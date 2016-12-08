@@ -52,6 +52,7 @@ libc++abi.dylib: terminating with uncaught exception of type NSException
 > I finally figured out what the heck was going on here. Turns out the difference was that the project I had created was using Swift. I tried creating an identical project using Objective-C instead, and everything worked as expected. The reason was that the extension mechanism is looking up the NSViewController subclass to instantiate by name, based on the NSExtensionPrincipalClass value in the extension's Info.plist. However, when dealing with a Swift class, the module name needs to be included in order for the Objective-C runtime to be able to find it. Changing the NSExtensionPrincipalClass value from "PhotoEditingViewController" to "MyExtension.PhotoEditingViewController" (where "MyExtension" is the name of the extension target), then it's able to find the Swift class and the extension loads properly in Photos. I've filed this with 
 
 简单翻译一下就是：
+
 > Extension 的机制是通过 Info.plist 中的 `NSExtensionPrincipalClass` 字段提供的类名来实例化一个 ViewController，然而当提供的是一个 Swift 类时，这个类所在的模块名称也必须包含在类名中，否则 Objective-C runtime 没有办法找到这个类，所以设置 `NSExtensionPrincipalClass` 字段时应该设置成：`ExtensionName.ViewConntrollerName`
 
 这个解答是正确的，也解释了之前的崩溃：
