@@ -13,7 +13,7 @@ timezone: CN
 # SNS settings
 RSS: false
 weibo_username:     isan333
-zhihu_username:     smart_isan
+# zhihu_username:     smart_isan
 github_username:    beset
 twitter_username:   3isan
 
