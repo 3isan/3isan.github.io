@@ -27,7 +27,7 @@ Swift 社区实在是太过活跃，自从 Swift 于2015年12月份正式开源�
 - [Zewo](https://github.com/Zewo/Zewo)
 
 今天我选择从 `Kitura` 入坑，至于为什么选择 `Kitura` ?你可以从今年六月份WWDC的[这一个 session](https://developer.apple.com/videos/play/wwdc2016/415/)
-![img](/img/in-post/swift-server/bestie.png)
+![img](/img/in-post/swift-server/swift-server-session.png)
 
 以及 IBM 的 [Chris Bailey](https://twitter.com/Chris__Bailey/) 在今年10月25号于 Swift 官方博客上[宣布 Server APIs work group 的成立](https://swift.org/server-apis/)。
 
