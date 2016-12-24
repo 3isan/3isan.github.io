@@ -19,6 +19,7 @@ tags:
 `Routine` 现在是完整的，不过之前计划的 Today Extension、 Apple Watch 版本及云端同步数据没有来得及做好，就没有随这次提交一起上。这些会在1.1更新时全部加上。
 
 `Routine` 是很好的。
+
 >Make a day count
 
 好。
@@ -49,6 +50,7 @@ tags:
 >Keep looking, Don't settle.
 
 顺便贴下最喜欢的：
+
 >Ultimately it comes down to taste.
 
 有些人很幸运，很早就能找到自己，更多的人没有这份幸运，最终没有放弃的更幸运，而放弃了的。。好吧，也没什么不好。
