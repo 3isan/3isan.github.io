@@ -5,7 +5,8 @@ header-img: img/home-bg.jpg
 email: 3isan333@gmail.com
 description: "Fortress of Solitude of Isan"
 keyword: "胡阳华, Isan, Isan HU, @isan"
-url: "http://www.isan.io/"              # your host, for absolute URL
+# url: "http://www.isan.io/"              # your host, for absolute URL
+url: ""              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 # blogurl: "http://blog.isan.io"
 blogurl: "/blog"
