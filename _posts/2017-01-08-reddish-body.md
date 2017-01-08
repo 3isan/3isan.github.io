@@ -2,7 +2,7 @@
 layout:     post
 title:      "潮红色男人"
 subtitle:   ""
-date:       2017-01-07 23:00
+date:       2017-01-08 15:00
 author:     "Isan"
 header-img: "img/Reddish-body-bg.jpg"
 catalog: true
