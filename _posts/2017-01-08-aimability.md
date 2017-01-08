@@ -5,13 +5,9 @@ subtitle:   ""
 date:       2017-01-08 21:30
 author:     "Isan"
 header-img: "img/Reddish-body-bg.jpg"
-catalog: true
 tags:
     - 认知
 ---
-
-
-![img](/img/in-post/bornedtag/aimability.PNG)
 
 
 目标感差的人，经常被以下问题困恼：
