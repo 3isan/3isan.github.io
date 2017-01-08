@@ -2,7 +2,7 @@
 layout:     post
 title:      "关于公平"
 subtitle:   ""
-date:       2017-01-08 21:00
+date:       2017-01-08 21:15
 author:     "Isan"
 header-img: "img/Reddish-body-bg.jpg"
 catalog: true

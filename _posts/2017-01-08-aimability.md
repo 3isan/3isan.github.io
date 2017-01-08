@@ -1,8 +1,8 @@
 ---
 layout:     post
-title:      "关于公平"
+title:      "目标感"
 subtitle:   ""
-date:       2017-01-08 21:00
+date:       2017-01-08 21:30
 author:     "Isan"
 header-img: "img/Reddish-body-bg.jpg"
 catalog: true
