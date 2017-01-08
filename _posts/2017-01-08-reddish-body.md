@@ -59,4 +59,4 @@ tags:
 
 ![img](/img/in-post/reddishbody/wade02.jpg)
 
-![img](/img/in-post/reddishbody/wade03.jpg)
+![img](/img/in-post/reddishbody/wade03.jpeg)
