@@ -4,11 +4,10 @@ title:      "做时间的朋友"
 subtitle:   ""
 date:       2017-03-25 11:00
 author:     "Isan"
-header-img: "img/time.jpg"
+header-img: "img/time.png"
 catalog: true
 tags:
-    - Tuning
-    - Man
+    - Time
 ---
 
 用最少的代价获得最多的收益，这本身没错。不过一旦考虑到“时间”这个维度，代价和收益就没这么好衡量了。
