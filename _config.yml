@@ -1,14 +1,14 @@
 # Site settings
-title: Fortress of Solitude of Isan
-SEOTitle: Fortress of Solitude of Isan
+title: Isan's blog
+SEOTitle: Isan's blog
 header-img: img/home-bg.jpg
 email: 3isan333@gmail.com
-description: "Fortress of Solitude of Isan"
-keyword: "胡阳华, Isan, Isan HU, @isan"
+description: "Isan's blog"
+keyword: "Isan's blog, 胡阳华, Isan, Isan HU, @isan"
 url: "http://www.isan.io/"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 # blogurl: "http://blog.isan.io"
-blogurl: "/blog"
+# blogurl: "/blog"
 timezone: CN
 
 # SNS settings
@@ -25,8 +25,8 @@ twitter_username:   3isan
 highlighter: rouge
 permalink: pretty
 paginate: 5
-paginate_path: "/blog/page:num/"
-permalink: /blog/:title
+# paginate_path: "/blog/page:num/"
+# permalink: /blog/:title
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md"]
 anchorjs: false                          # if you want to customize anchor. check out line:181 of `post.html`
 
