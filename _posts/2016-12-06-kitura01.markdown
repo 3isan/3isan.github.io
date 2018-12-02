@@ -1,0 +1,177 @@
+---
+layout:     post
+title:      "Swift 服务端应用开篇"
+subtitle:   "第一个 Kitura web 应用"
+date:       2016-12-06 23:11
+author:     "isan"
+header-img: "img/kitura-bg.png"
+catalog: true
+tags:
+    - Swift
+    - Kitura
+---
+
+## Swift 好
+
+Swift 尤其受到新生代开发者的青睐，为什么？因为：
+
+>Swift 年轻有为、多才多艺、八面玲珑、前途光明。
+
+之前有折腾过 Swift 在服务端的应用，由于之前 Swift 版本太过动荡，没有持续的折腾，今天准备重新入坑。
+
+Swift 社区实在是太过活跃，自从 Swift 于2015年12月份正式开源到现在差不多一年时间里，涌现了无数的开源项目，其中就有很多项目的志向是将Swift应用到服务端和web端，在 Github 上最受欢迎的是：
+
+- [Perfect](https://github.com/PerfectlySoft/Perfect)
+- [Vapor](https://github.com/vapor/vapor)
+- [Kitura](https://github.com/IBM-Swift/Kitura)
+- [Zewo](https://github.com/Zewo/Zewo)
+
+今天我选择从 `Kitura` 入坑，至于为什么选择 `Kitura` ?你可以从今年六月份WWDC的[这一个 session](https://developer.apple.com/videos/play/wwdc2016/415/)
+![img](/img/in-post/swift-server/swift-server-session.png)
+
+以及 IBM 的 [Chris Bailey](https://twitter.com/Chris__Bailey/) 在今年10月25号于 Swift 官方博客上[宣布 Server APIs work group 的成立](https://swift.org/server-apis/)。
+
+以及 Chris Lattner 的[这篇推文](https://twitter.com/clattner_llvm/status/804726031546335232)
+找到答案。
+![img](/img/in-post/swift-server/chris-ibm.png)
+
+IBM 和苹果显然已经借着 Swift 成了一对基友。
+
+## 选好框架现在开始
+
+#### 环境配置
+- macOS Sierra
+- Xcode 8.1
+
+#### 创建一个 Kitura web 应用
+
+创建项目目录
+
+```
+$ mkdir Kitura-test
+```
+
+使用 [Swift Package Manager](https://swift.org/package-manager/) 创建一个swift project
+
+```
+$ cd Kitura-test
+$ swift package init --type executable
+```
+
+swift project 创建成功后，项目目录结构应该是：
+
+```
+Kitura-test
+├── Package.swift
+├── Sources
+│   └── main.swift
+└── Tests
+```
+
+在 `Package.swift` 中加上 `Kitura` 依赖
+
+```swift
+import PackageDescription
+let package = Package(
+    name: "Kitura-test",
+    dependencies: [
+        .Package(url: "https://github.com/IBM-Swift/Kitura.git", majorVersion: 1, minor: 2)
+    ])
+```
+
+在 `Sources/main.swift` 中加上：
+
+```swift
+import Kitura
+// Create a new router
+let router = Router()
+// Handle HTTP GET requests to /
+router.get("/") {
+    request, response, next in
+    response.send("Hello, World!")
+    next()
+}
+// Add an HTTP server and connect it to the router
+Kitura.addHTTPServer(onPort: 8090, with: router)
+// Start the Kitura runloop (this call never returns)
+Kitura.run()
+```
+
+编译
+
+```
+$ swift build
+```
+编译开始首先回去 clone `Package.swift` 中的依赖，完成之后编译项目和依赖的模块，最后链接模块。这些过程终端中有比较简略的输出可供查看。
+
+运行程序
+
+```
+$ .build/debug/Kitura-test
+```
+
+在浏览器中访问 http://localhost:8090，会看到 Hello, World! 
+
+至此，一个 swift web 应用就算是搭建成功了。
+
+#### 给应用加上 log
+
+运行这个程序后终端中没有任何的输出信息，所以就无从知道程序的运行状态。可以添加一个 log 模块帮助查看及诊断程序：
+
+在 `Package.swift` 中添加 `HeliumLogger` 依赖：
+
+```swift
+import PackageDescription
+let package = Package(
+    name: "Kitura-test",
+    dependencies: [
+        .Package(url: "https://github.com/IBM-Swift/Kitura.git", majorVersion: 1, minor: 2),
+        .Package(url: "https://github.com/IBM-Swift/HeliumLogger.git", majorVersion: 1, minor: 1)
+    ])
+```
+
+在 `Sources/main.swift` 中开启 `HeliumLogger`
+
+```swift
+import Kitura
+import HeliumLogger
+// Initialize HeliumLogger
+HeliumLogger.use()
+// Create a new router
+let router = Router()
+// Handle HTTP GET requests to /
+router.get("/") {
+    request, response, next in
+    response.send("Hello, World!")
+    next()
+}
+// Add an HTTP server and connect it to the router
+Kitura.addHTTPServer(onPort: 8090, with: router)
+// Start the Kitura runloop (this call never returns)
+Kitura.run()
+```
+
+按 `Ctrl + C` 终止程序运行后重新 `build` 项目并重新运行项目，运行后可以在终端中看到如下的 log 信息：
+
+```
+VERBOSE: init(mergeParameters:) Router.swift line 67 - Router initialized 
+ VERBOSE: run() Kitura.swift line 71 - Starting Kitura framework... 
+ VERBOSE: run() Kitura.swift line 73 - Starting an HTTP Server on port 8090... 
+ INFO: listen(on:) HTTPServer.swift line 73 - Listening on port 8090 
+ VERBOSE: listen(listenSocket:) HTTPServer.swift line 144 - Accepted connection from: 127.0.0.1:59782 
+ VERBOSE: listen(listenSocket:) HTTPServer.swift line 144 - Accepted connection from: 127.0.0.1:59814 
+ VERBOSE: listen(listenSocket:) HTTPServer.swift line 144 - Accepted connection from: 127.0.0.1:61476 
+ VERBOSE: listen(listenSocket:) HTTPServer.swift line 144 - Accepted connection from: 127.0.0.1:61592 
+```
+
+
+
+
+
+
+
+
+
+
+
+
